@@ -31,3 +31,47 @@ input, button {
 button {
   cursor: pointer;
 }
+
+
+
+
+.card-grid {
+  display: grid; /* Organizza gli elementi in una griglia */
+  grid-template-columns: repeat(auto-fit, minmax(180px, 1fr)); /* Crea colonne flessibili */
+  gap: 20px; /* Spaziatura tra gli elementi */
+  padding: 20px; /* Margine interno della griglia */
+}
+
+
+.card {
+  background-color: #222; /* Sfondo scuro per le card */
+  border-radius: 10px; /* Smussa gli angoli */
+  overflow: hidden; /* Nasconde il contenuto che esce dal bordo */
+  position: relative; /* Serve per posizionare elementi interni */
+  transition: transform 0.3s; /* Effetto animazione quando cambia trasformazione */
+  color: white; /* Testo bianco per contrasto */
+}
+
+
+.card:hover {
+  transform: scale(1.05); /* Ingrossa la card quando ci passi sopra */
+}
+
+
+.card-hover {
+  position: absolute; /* Posiziona il contenuto rispetto alla card */
+  bottom: 0; /* Lo sposta in fondo alla card */
+  background-color: rgba(0,0,0,0.85); /* Sfondo semitrasparente per effetto hover */
+  color: white; /* Testo bianco per leggibilità */
+  width: 100%; /* Occupa tutta la larghezza della card */
+  padding: 10px; /* Margine interno */
+  transform: translateY(100%); /* Inizialmente fuori dalla card */
+  transition: transform 0.3s; /* Effetto transizione per farlo apparire */
+  font-size: 0.9rem; /* Dimensione leggermente ridotta rispetto al testo normale */
+}
+
+
+
+.card:hover .card-hover {
+  transform: translateY(0); /* Quando si passa sopra la card, il contenuto appare */
+}
