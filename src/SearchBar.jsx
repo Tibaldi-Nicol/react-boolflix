@@ -76,6 +76,8 @@ function SearchBar(){
         return flags[lang] || lang; // se la bandiera non nce scrive solo lang;
     };
 
+    
+
 
     //qui metto la parte visiva del mio componente cioe la navbar     
     return(         
@@ -92,7 +94,17 @@ function SearchBar(){
             <div>             
                 {/*qui mappo tutti i film trovati e li mostro in una lista*/}
                 {filmTrovati.map((film) => (           
-                    <div key={film.id} style={{ border: "1px solid gray", margin: "10px", padding: "10px" }}>             
+                    <div key={film.id} style={{ border: "1px solid gray", margin: "10px", padding: "10px" }}> 
+                    {/*mostro l'immagine del film*/}
+                    {film.poster_path ? (
+                    <img
+                        src={`https://image.tmdb.org/t/p/w342${film.poster_path}`}
+                        alt={film.title || film.name}
+                        style={{ width: "150px", display: "block", marginBottom: "10px" }}
+                    />
+                    ) : (
+                    <p>[Nessuna immagine disponibile]</p>
+    )}            
                         {/*mostro il titolo del film*/}
                         <h3>{film.title || film.name}</h3>             
                         {/*mostro il titolo originale del film*/}
@@ -103,7 +115,7 @@ function SearchBar(){
                         {/*mostro il voto medio del film*/}
                         <p>Voto: {film.vote_average}</p>
                         {/*mostro se è film o serie*/}
-                        <p>Tipo: {film.type === "film" ? "🎬 Film" : "📺 Serie TV"}</p>           
+                        <p>Tipo: {film.type === "film" ? "🎬 Film" : "📺 Serie TV"}</p>  {/**lascio le icone per renderlo piu carino */}         
                     </div>         
                 ))}       
             </div>     
