@@ -1,0 +1,33 @@
+
+
+/*il body quindi tutta la pagina la faccio nera, con scritte bianche  e font stadard*/
+
+body {
+  margin: 0;
+  font-family: Arial, sans-serif;
+  background-color: #111;
+  color: white;
+}
+/*app header è il div che controlla il mio titolo e la mia searchbar sfondo nero, metto al centro pagina stilizzo bottone*/
+.app-header {
+  background-color: #141414;
+  padding: 20px;
+  text-align: center;
+  border-bottom: 2px solid #e50914;
+}
+/*selezione h1, ingrandisco di 2 rem e faccio il titolo eosso */
+.app-header h1 {
+  margin: 0;
+  font-size: 2rem;
+  color: #e50914;
+}
+/*vado a dare stile al campo input e bottone piu grandi e li distanzio*/
+input, button {
+  padding: 10px;
+  margin: 5px;
+  font-size: 1rem;
+}
+/*effetto*/
+button {
+  cursor: pointer;
+}
